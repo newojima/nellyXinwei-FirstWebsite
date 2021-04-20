@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Nelson's COPD Health.org : Chronic Obstructive Pulmonary Disease</title>
+
+<script language="JavaScript">
+function GetCookie (name) {
+var arg = name + "=";
+var alen = arg.length;
+var clen = document.cookie.length;
+var i = 0;
+while (i < clen) {
+var j = i + alen;
+if (document.cookie.substring(i, j) == arg)
+return getCookieVal (j);
+i = document.cookie.indexOf(" ", i) + 1;
+if (i == 0) break;
+}
+return null;
+}
+function SetCookie (name, value) {
+var argv = SetCookie.arguments;
+var argc = SetCookie.arguments.length;
+var expires = (argc > 2) ? argv[2] : null;
+var path = (argc > 3) ? argv[3] : null;
+var domain = (argc > 4) ? argv[4] : null;
+var secure = (argc > 5) ? argv[5] : false;
+document.cookie = name + "=" + escape (value) +
+((expires == null) ? "" : ("; expires=" + expires.toGMTString())) +
+((path == null) ? "" : ("; path=" + path)) +
+((domain == null) ? "" : ("; domain=" + domain)) +
+((secure == true) ? "; secure" : "");
+}
+function DeleteCookie (name) {
+var exp = new Date();
+exp.setTime (exp.getTime() - 1);
+var cval = GetCookie (name);
+document.cookie = name + "=" + cval + "; expires=" + exp.toGMTString();
+}
+var expDays = 7;
+var exp = new Date();
+exp.setTime(exp.getTime() + (expDays*24*60*60*1000));
+function amt(){
+var count = GetCookie('count')
+if(count == null) {
+SetCookie('count','1')
+return 1
+}
+else {
+var newcount = parseInt(count) + 1;
+DeleteCookie('count')
+SetCookie('count',newcount,exp)
+return count
+   }
+}
+function getCookieVal(offset) {
+var endstr = document.cookie.indexOf (";", offset);
+if (endstr == -1)
+endstr = document.cookie.length;
+return unescape(document.cookie.substring(offset, endstr));
+}
+</script>
+</head>
+
+<style>
+a:link, a:visited {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: navy;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  text-decoration:none;
+  font-size: 25px;
+  padding:  15px 25px;
+  width: auto;
+  cursor: pointer;
+  margin: 5px;
+  font-family: courier;
+  Position:relative;
+}
+
+a:hover, a:active {
+    background-color:blue;
+}
+
+.main_block {
+    width: 100px;
+    border: 2px black solid;
+}
+
+.main_block: before, .main_block: after {
+    overflow: hidden;
+    content: "";
+    display: table;
+}
+
+.main_block: after {
+    clear: both;
+}
+
+.inner_block {
+    display: inline-block;
+    float: left;
+    width: 40%;
+    Padding:25px;
+    Margin:25px; 
+}
+
+.inner_block img {
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+.dropbtn {
+  display: inline-block;
+  border-radius: 5px;
+  background-color: navy;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  text-decoration:none;
+  font-size: 21px;
+  padding:  20px 25px;
+  width: auto;
+  transition: all 0.5s;
+  cursor: pointer;
+  font-family: courier;
+}
+
+.dropbtn span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.dropbtn span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.dropbtn:hover span {
+  padding-right: 25px;
+}
+
+.dropbtn:hover span:after {
+  opacity: 1;
+  right: 0;
+  Background color: blue;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: navy;
+    min-width: 300px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+	text-align: left;
+	font-family: futura;
+	font-size: 18px;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+background-color: blue
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+background-color: blue;
+}
+
+.header{
+Background-color:navy;
+border-radius: 10px;
+}
+
+#clock{
+   font-size:18px;
+	font-family:futura;
+   color:white;
+   text-shadow:2px 2px 2px blue;
+	text-align:center;
+border-radius: 10px;
+   background-color:blue; 
+   width:135px; 
+   height:auto;
+}
+
+	#tfnewsearch{
+		float:left;
+	}
+
+input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 18px;
+    font-family: futura;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 3px 10px 3px 10px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 410%;
+}
+
+.ct{
+Float: left;
+Background-color:white;
+Width:700px; 
+Padding: 20px;
+Margin: 20px 10px;
+border-radius: 5px black;
+Text-align:justify;
+}
+</style>
+
+<table border="3" background="http://ppds22.edumsko.ru/uploads/6000/23294/design/backgrounds/500289_fon_oblaka_goluboj-cvet_1920x1080_(www.GetBg.net).jpg" style="border: solid black" cellspacing="0" cellpadding="10" width="100%">
+
+<tr><td bgcolor="white"><img src="http://www.safesmoking.in/image/catalog/body%20effects/icon-blue-lungs.png" style="height: 20%" align="center"><td>
+<font face="Copperplate" color="white" size="6">Nelson's <br></font>
+
+<font face="copperplate" size="6" color="blue" align="justify">COPD</font><br><font face="courier" color="black" size="5"> Health.org</font><td>
+
+<font face="American Typewriter" size="5">
+
+<center>
+<a href="Overview.html"=_blank> Home</a> | | <a href ="mailto:njtalba20@xs.edu.ph">Contacts</A> | | <a href="About.html">About Us</a>
+
+</table>
+
+<body background="http://i58.beon.ru/36/14/1071436/11/61932511/1.jpeg">
+
+
+<font face="Courier" align="justify" color="blue"><h1> Chronic Obstructive Pulmonary Disease </h1></font>
+
+<center>
+<div class="header">
+<div class="dropdown">
+  <button class="dropbtn"><span>Overview</span></button>
+  <div class="dropdown-content" style="left:0;">
+    <img src="http://www.riskmanagement365.com/wp-content/uploads/2014/08/COPD-2.jpg"width="300" height="150"><font color="white" face="futura" size="2"><center>"A progressive pulmonary disease that narrows airways that creates difficulty in breathing."</font>
+    <a href="Overview.html">Overview of COPD</a>
+  </div>
+</div>
+
+
+<div class="dropdown" >
+  <button class="dropbtn"><span>Details</span></button>
+  <div class="dropdown-content" style="left:0;">
+    <a href="A.html">Cell Respiration</a>
+    <a href="B.html">Transport and Respiratory Systems</a>
+    <a href="Details.html">What is COPD?</a>
+  </div>
+</div>
+
+<div class="dropdown">
+  <button class="dropbtn"><span>Causes</span></button>
+  <div class="dropdown-content" style="left:0;">
+    <img src="http://www.thetimes.co.uk/tto/multimedia/archive/00178/NM352302_a_178390c.jpg" width="300" height="150"><font color="white" face="futura" size="2"><center>"Mostly caused by inhaling harmful pollutants, genetics is also a risk factor."</font>
+    <a href="Causes.html">Causes of COPD</a>
+  </div>
+</div>
+
+<div class="dropdown">
+  <button class="dropbtn"><span>Symptoms</span></button>
+  <div class="dropdown-content" style="left:0;">
+    <img src="http://ee90f6b805aae820daaa-549a96ccbf72b2d1a642d6e3578a62c7.r79.cf5.rackcdn.com/wp-content/uploads/COPD-diseased_lung-e1456281652579.jpg" width="300" height="150"><font color="white" face="futura" size="2"><center>"Difficulty in breathing and more vulnerable to respiratory infections are its main symptoms"</font>
+    <a href="Symptoms.html"> Symptoms of COPD </a>
+  </div>
+</div>
+
+<div class="dropdown">
+<button class="dropbtn"><span>Treatment</span></button>
+  <div class="dropdown-content"  style="left:0;">
+    <a href="Lifestyle.html">Lifestyle Treatments</a>
+    <a href="Medication.html">Medication Treatments</a>
+  </div>
+</div>
+
+<div class="dropdown"><button class="dropbtn"><span><div id="clock"><span></button> <div class="dropdown-content"  style="left:0;"><center><font face="futura" size="4px" color="white">
+<p id="demo"></p>
+
+<script>
+var d = new Date();
+document.getElementById("demo").innerHTML = d.toDateString();
+</script>
+Number of Visitors: 
+<br><script language="JavaScript">
+document.write("<b>" + amt() + "</b>")</script>
+</script>
+</font>
+</div>
+
+<script type="text/javascript">
+function startTime()
+{
+var today=new Date()
+var h=today.getHours()
+var m=today.getMinutes()
+var s=today.getSeconds()
+var ap="AM";
+
+//to add AM or PM after time
+
+if(h>11) ap="PM";
+if(h>12) h=h-12;
+if(h==0) h=12;
+
+//to add a zero in front of numbers<10
+
+m=checkTime(m)
+s=checkTime(s)
+
+document.getElementById('clock').innerHTML=h+":"+m+":"+s+" "+ap
+t=setTimeout('startTime()', 500)
+}
+
+function checkTime(i)
+{
+if (i<10)
+{ i="0" + i}
+return i
+}
+
+window.onload=startTime;
+
+</script>
+
+</div></div><br>
+
+<Table border="10" bgcolor="white" style="border: solid black" cellpadding="15" cellspacing="0"><tr>
+<td>  <div class="inner_block">
+        <img src="http://www.riskmanagement365.com/wp-content/uploads/2014/08/COPD-2.jpg">
+</div>
+
+<div class="inner_block">
+      <Img src="http://videos2.healthination.com/HN_BB_HN_COPD_BB_Signs_ProRes_423/HN_BB_HN_COPD_BB_Signs_ProRes_423-img_1280x720.jpg">
+    </div>
+
+<font face="Copperplate"><h1>What is COPD?</h1></font>
+
+<font face="futura" size="5" align="justify"><p>Chronic Obstructive Pulmonary Disease is interpreted as a group of lung conditions that makes airways narrowed thus, the lungs will have a difficult time to empty out air. In other words, people with COPD will have a hard time to breathe air, making the lungs unable to take in oxygen and exhale carbon dioxide.</p>
+
+<p>This medical condition damages and lessens the pull of the lung tissues in the airways as their elastic lining flops and get inflamed, making the passage of the air narrowed or less air will go in which makes it harder to breathe and have low-oxygen levels.
+</p></font>
+
+<p align="right"><font face="courier" size="5">
+<a href="Causes.html"> Causes of COPD >></a>
+</p></font>
+</table>
+
+<hr size="30%" color="blue">
+
+<center><table border="3" style="border:solid blue" bgcolor="white" cellpadding="15" cellspacing="10" width="100%">
+
+<tr><td><font face="Copperplate" size="4"><center>| Copyright &copy 2017, Nelson  COPD Health.org |</font> 
+
+<font face="courier" size="3">
+<br>Nelson COPD Health Organisation is a non-profit organisation that helps people with COPD</font>
+
+</table>
+
+</body>
+</html>

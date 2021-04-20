@@ -1,0 +1,145 @@
+a:link, a:visited {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: navy;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  text-decoration:none;
+  font-size: 25px;
+  padding:  15px 25px;
+  width: auto;
+  cursor: pointer;
+  margin: 5px;
+  font-family: courier;
+  Position:relative;
+}
+
+a:hover, a:active {
+    background-color:blue;
+}
+
+.main_block {
+    width: 100px;
+    border: 2px black solid;
+}
+
+.main_block: before, .main_block: after {
+    overflow: hidden;
+    content: "";
+    display: table;
+}
+
+.main_block: after {
+    clear: both;
+}
+
+.inner_block {
+    display: inline-block;
+    float: left;
+    width: 40%;
+    Padding:25px;
+    Margin:25px; 
+}
+
+.inner_block img {
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+.dropbtn {
+  display: inline-block;
+  border-radius: 5px;
+  background-color: navy;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  text-decoration:none;
+  font-size: 21px;
+  padding:  20px 25px;
+  width: auto;
+  transition: all 0.5s;
+  cursor: pointer;
+  font-family: courier;
+}
+
+.dropbtn span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.dropbtn span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.dropbtn:hover span {
+  padding-right: 25px;
+}
+
+.dropbtn:hover span:after {
+  opacity: 1;
+  right: 0;
+  Background color: blue;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: navy;
+    min-width: 300px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+	text-align: left;
+	font-family: futura;
+	font-size: 18px;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+background-color: blue
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+background-color: blue;
+}
+
+.header{
+Background-color:navy;
+border-radius: 10px;
+}
+
+#clock{
+   font-size:18px;
+	font-family:futura;
+   color:white;
+   text-shadow:2px 2px 2px blue;
+	text-align:center;
+border-radius: 10px;
+   background-color:blue; 
+   width:135px; 
+   height:auto;
+}

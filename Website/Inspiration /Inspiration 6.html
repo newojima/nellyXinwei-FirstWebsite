@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+window.onload = function(){ 
+	var submitbutton = document.getElementById("tfq");
+</script>
+</head>
+<style>
+
+	.rbtn {
+		font-family: futura;
+		font-size: 15px;
+		cursor: pointer;
+		text-align: center;
+		text-decoration: none;
+		background: red;
+}
+
+a:link, a:visited {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: navy;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  text-decoration:none;
+  font-size: 25px;
+  padding:  15px 25px;
+  width: auto;
+  cursor: pointer;
+  margin: 5px;
+  font-family: courier;
+  Position:relative;
+}
+
+a:hover, a:active {
+    background-color:blue;
+}
+</style>
+<body>
+		<form method="get" action="http://www.google.com">
+		<input type="submit" value="<" class="rbtn">
+		<input type="submit" value=">" class="rbtn">
+		</form>
+
+<a href="http://www.google.com"><</a>
+</body>
+</html>

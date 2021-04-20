@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<style>
+	#tfnewsearch{
+		float:left;
+	}
+
+input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: futura;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 6px 10px 6px 10px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 100%;
+}
+</style>
+<body>
+
+<button onclick="myFunction()">Your Concerns</button>
+
+<font face="futura"><p id="demo"></p></font>
+
+<script>
+function myFunction() {
+    var a = prompt("Please enter your name","Guest");
+    
+    if (a != null) { prompt("Your Concern");
+        document.getElementById("demo").innerHTML =
+        " : " + a + ", your concern has been noted.";
+
+    } else { alert(" We are glad to be at your service!");
+}
+
+}
+</script>
+
+</body>
+</html>

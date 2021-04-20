@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button onclick="myFunction()">Your Concerns</button>
+
+<font face="futura"><p id="demo"></p></font>
+
+<script>
+function myFunction() {
+    var a = prompt("Please enter your name","Guest");
+    
+    if (a != null) { prompt("Your Concern");
+        document.getElementById("demo").innerHTML =
+        " : " + a + ", your concern has been noted.";
+
+    } else { alert(" We are glad to be at your service!");
+}
+
+}
+</script>
+
+</body>
+</html>

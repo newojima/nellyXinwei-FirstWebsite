@@ -1,0 +1,54 @@
+ <style>
+input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: futura;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 6px 10px 6px 10px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 100%;
+}
+</style>
+
+<script>
+function validateForm() {
+	var a = document.forms["myForm"]["fname"].value;
+
+	if (a != null) { prompt("Your Concern");
+        document.getElementById("demo").innerHTML =
+        " : " + a + ", your concern has been noted.";
+	}
+}
+</script>
+
+<form name="myForm" action="demo_form.asp" onsubmit="return validateForm()" method="post">
+Enter Your Name: <input type="text" name="fname">
+</form></P>
+
+<form name="myForm" action="demo_form.asp" onsubmit="return validateForm()" method="post">
+Concerns: <input type="text" placeholder="Your Concern..." name="fname">
+</form>
+
+<script>
+function validateForm() {
+	var x = document.forms["myForm"]["fname"].value;
+	if (x == "") {
+		alert("Your answer must be filled out");
+		return false;
+	} else {
+	alert("Thank you very much!");
+	return true;
+	}
+}
+</script>
+	
